@@ -33,7 +33,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
 import { toast } from "sonner"
-import { Plus, Pencil, Trash2, Loader2, X, Check } from "lucide-react"
+import { Plus, Pencil, Trash, Loader2, X, Check } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 // ─────────────────────────────────────────────
@@ -431,7 +431,7 @@ export default function AdminPackagesPage() {
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button variant="ghost" size="icon" className="text-destructive hover:text-destructive/90">
-                            <Trash2 className="h-4 w-4" />
+                            <Trash className="h-4 w-4" />
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>

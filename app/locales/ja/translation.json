@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "services": "サービス",
+    "process": "プロセス",
+    "pricing": "料金",
+    "portfolio": "ポートフォリオ",
+    "about": "会社概要",
+    "contact": "お問い合わせ",
+    "blog": "ブログ",
+    "careers": "採用情報",
+    "login": "ログイン",
+    "getStarted": "始めましょう"
+  },
+  "hero": {
+    "title": "プレミアムエンタープライズソリューション",
+    "titleHighlight": "パキスタンと世界中で",
+    "subtitle": "イスラマバードとラワルピンディから世界へ、革新的なウェブ開発、デジタルマーケティング、コンサルティングソリューションを提供します。",
+    "cta": "始めましょう",
+    "ctaSecondary": "実績を見る"
+  },
+  "stats": {
+    "projects": "納品プロジェクト",
+    "clients": "満足のお客様",
+    "countries": "サービス提供国",
+    "uptime": "稼働率保証"
+  },
+  "services": {
+    "title": "サービス一覧",
+    "subtitle": "ビジネスの成長に合わせた包括的なソリューション",
+    "webDev": "ウェブ開発",
+    "webDevDesc": "最先端技術で構築されたカスタムレスポンシブウェブサイトとウェブアプリケーション。",
+    "digitalMarketing": "デジタルマーケティング",
+    "digitalMarketingDesc": "SEO、SEM、ソーシャルメディアマーケティング、成果を上げるコンテンツ戦略。",
+    "consulting": "コンサルティング",
+    "consultingDesc": "業務変革のための専門的なビジネス・テクノロジーコンサルティング。",
+    "saas": "SaaSソリューション",
+    "saasDesc": "企業ニーズに対応したスケーラブルなSaaS製品。",
+    "mobile": "モバイルアプリ",
+    "mobileDesc": "iOSとAndroid向けのネイティブ・クロスプラットフォームモバイルアプリケーション。",
+    "cloud": "クラウドインフラ",
+    "cloudDesc": "安全でスケーラブルなクラウドアーキテクチャとDevOpsソリューション。"
+  },
+  "about": {
+    "title": "AM Enterprisesについて",
+    "subtitle": "イスラマバードとラワルピンディから未来を構築",
+    "story": "イスラマバードで設立されたAM Enterprisesは、パキスタンと国際的にクライアントにサービスを提供する主要なSaaSプロバイダーに成長しました。",
+    "mission": "ミッション",
+    "missionText": "パキスタンの中心から、最先端のテクノロジーソリューションで世界中の企業を支援します。",
+    "vision": "ビジョン",
+    "visionText": "パキスタン、中東、そしてそれ以外の地域の企業にとって最も信頼されるテクノロジーパートナーになること。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ビジネスの変革の準備はできましたか？お気軽にご連絡ください。",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "message": "メッセージ",
+    "send": "メッセージを送信",
+    "sending": "送信中...",
+    "success": "メッセージが正常に送信されました！",
+    "location": "オフィス",
+    "islamabad": "パキスタン・イスラマバード（本社）",
+    "rawalpindi": "パキスタン・ラワルピンディ"
+  },
+  "pricing": {
+    "title": "料金プラン",
+    "subtitle": "あらゆる規模のビジネスに対応する手頃なソリューション",
+    "starter": "スターター",
+    "professional": "プロフェッショナル",
+    "enterprise": "エンタープライズ",
+    "popular": "最も人気",
+    "perMonth": "/月",
+    "getStarted": "始めましょう",
+    "contactSales": "営業に連絡",
+    "features": "機能"
+  },
+  "portfolio": {
+    "title": "ポートフォリオ",
+    "subtitle": "パキスタンと国際的に成功したプロジェクト",
+    "viewProject": "プロジェクトを見る",
+    "allCategories": "すべて"
+  },
+  "process": {
+    "title": "プロセス",
+    "subtitle": "ステップバイステップで卓越性を提供する方法",
+    "step1": "発見",
+    "step1Desc": "お客様の要件、目標、市場環境を詳細に分析します。",
+    "step2": "戦略",
+    "step2Desc": "明確なマイルストーンを備えたカスタマイズされたロードマップを作成します。",
+    "step3": "デザイン",
+    "step3Desc": "ブランドアイデンティティを反映した美しいユーザー中心のデザイン。",
+    "step4": "開発",
+    "step4Desc": "定期的なアップデートと品質保証によるアジャイル開発。",
+    "step5": "ローンチ",
+    "step5Desc": "包括的なテストと最適化によるスムーズなデプロイメント。",
+    "step6": "サポート",
+    "step6Desc": "継続的なメンテナンス、アップデート、24時間365日のサポート。"
+  },
+  "blog": {
+    "title": "ブログ",
+    "subtitle": "パキスタンと世界のSaaS、テクノロジー、ビジネスに関するインサイト",
+    "readMore": "続きを読む",
+    "minRead": "分で読めます"
+  },
+  "careers": {
+    "title": "チームに参加",
+    "subtitle": "イスラマバード、ラワルピンディ、そして世界で未来を築く",
+    "whyJoin": "なぜAM Enterprisesに参加するのか？",
+    "openPositions": "募集中のポジション",
+    "applyNow": "今すぐ応募",
+    "location": "勤務地",
+    "remote": "リモート",
+    "cultureTitle": "企業文化",
+    "cultureDesc": "ダイナミックな環境でイノベーション、コラボレーション、成長を促進します。"
+  },
+  "login": {
+    "title": "おかえりなさい",
+    "subtitle": "アカウントにログイン",
+    "email": "メール",
+    "password": "パスワード",
+    "signIn": "ログイン",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "register": "登録",
+    "forgotPassword": "パスワードをお忘れですか？"
+  },
+  "footer": {
+    "description": "パキスタン・イスラマバードとラワルピンディに本社を置く主要なSaaSプロバイダー。国内外のクライアントにサービスを提供。",
+    "quickLinks": "クイックリンク",
+    "contact": "お問い合わせ",
+    "followUs": "フォローする",
+    "rights": "全著作権所有。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "common": {
+    "learnMore": "詳しく見る",
+    "bookNow": "今すぐ予約",
+    "loading": "読み込み中..."
+  }
+}

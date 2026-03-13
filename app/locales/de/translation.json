@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "process": "Prozess",
+    "pricing": "Preise",
+    "portfolio": "Portfolio",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "blog": "Blog",
+    "careers": "Karriere",
+    "login": "Anmelden",
+    "getStarted": "Loslegen"
+  },
+  "hero": {
+    "title": "Erstklassige Unternehmenslösungen",
+    "titleHighlight": "in Pakistan & weltweit",
+    "subtitle": "Wir liefern innovative Webentwicklung, digitales Marketing und Beratungslösungen von Islamabad & Rawalpindi in die Welt.",
+    "cta": "Loslegen",
+    "ctaSecondary": "Unsere Arbeit ansehen"
+  },
+  "stats": {
+    "projects": "Projekte geliefert",
+    "clients": "Zufriedene Kunden",
+    "countries": "Länder bedient",
+    "uptime": "Betriebszeitgarantie"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Lösungen für Ihr Unternehmenswachstum",
+    "webDev": "Webentwicklung",
+    "webDevDesc": "Maßgeschneiderte, responsive Websites und Webanwendungen mit modernsten Technologien.",
+    "digitalMarketing": "Digitales Marketing",
+    "digitalMarketingDesc": "SEO, SEM, Social-Media-Marketing und Content-Strategien, die Ergebnisse liefern.",
+    "consulting": "Beratung",
+    "consultingDesc": "Experten-Beratung für Geschäft und Technologie zur Transformation Ihrer Abläufe.",
+    "saas": "SaaS-Lösungen",
+    "saasDesc": "Skalierbare Software-as-a-Service-Produkte für Unternehmensanforderungen.",
+    "mobile": "Mobile Apps",
+    "mobileDesc": "Native und plattformübergreifende mobile Anwendungen für iOS und Android.",
+    "cloud": "Cloud-Infrastruktur",
+    "cloudDesc": "Sichere, skalierbare Cloud-Architektur und DevOps-Lösungen."
+  },
+  "about": {
+    "title": "Über AM Enterprises",
+    "subtitle": "Die Zukunft bauen von Islamabad & Rawalpindi",
+    "story": "AM Enterprises wurde in Islamabad gegründet und ist zu einem führenden SaaS-Anbieter gewachsen, der Kunden in Pakistan und international bedient.",
+    "mission": "Unsere Mission",
+    "missionText": "Unternehmen weltweit mit modernster Technologie zu stärken, ausgehend vom Herzen Pakistans.",
+    "vision": "Unsere Vision",
+    "visionText": "Der vertrauenswürdigste Technologiepartner für Unternehmen in Pakistan, dem Nahen Osten und darüber hinaus zu sein."
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Bereit, Ihr Unternehmen zu transformieren? Kontaktieren Sie uns.",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "location": "Unsere Büros",
+    "islamabad": "Islamabad, Pakistan (Hauptsitz)",
+    "rawalpindi": "Rawalpindi, Pakistan"
+  },
+  "pricing": {
+    "title": "Preispläne",
+    "subtitle": "Erschwingliche Lösungen für Unternehmen jeder Größe",
+    "starter": "Starter",
+    "professional": "Professionell",
+    "enterprise": "Enterprise",
+    "popular": "Beliebteste",
+    "perMonth": "/Monat",
+    "getStarted": "Loslegen",
+    "contactSales": "Vertrieb kontaktieren",
+    "features": "Funktionen"
+  },
+  "portfolio": {
+    "title": "Unser Portfolio",
+    "subtitle": "Erfolgreiche Projekte in Pakistan und international",
+    "viewProject": "Projekt ansehen",
+    "allCategories": "Alle"
+  },
+  "process": {
+    "title": "Unser Prozess",
+    "subtitle": "Wie wir Schritt für Schritt Exzellenz liefern",
+    "step1": "Entdeckung",
+    "step1Desc": "Wir analysieren Ihre Anforderungen, Ziele und Marktlandschaft im Detail.",
+    "step2": "Strategie",
+    "step2Desc": "Unser Team erstellt einen maßgeschneiderten Fahrplan mit klaren Meilensteinen.",
+    "step3": "Design",
+    "step3Desc": "Schöne, benutzerzentrierte Designs, die Ihre Markenidentität widerspiegeln.",
+    "step4": "Entwicklung",
+    "step4Desc": "Agile Entwicklung mit regelmäßigen Updates und Qualitätssicherung.",
+    "step5": "Start",
+    "step5Desc": "Reibungslose Bereitstellung mit umfassenden Tests und Optimierung.",
+    "step6": "Support",
+    "step6Desc": "Laufende Wartung, Updates und 24/7-Support."
+  },
+  "blog": {
+    "title": "Unser Blog",
+    "subtitle": "Einblicke in SaaS, Technologie und Geschäft in Pakistan & weltweit",
+    "readMore": "Weiterlesen",
+    "minRead": "Min. Lesezeit"
+  },
+  "careers": {
+    "title": "Werden Sie Teil unseres Teams",
+    "subtitle": "Bauen Sie die Zukunft in Islamabad, Rawalpindi & weltweit",
+    "whyJoin": "Warum AM Enterprises beitreten?",
+    "openPositions": "Offene Stellen",
+    "applyNow": "Jetzt bewerben",
+    "location": "Standort",
+    "remote": "Remote",
+    "cultureTitle": "Unsere Kultur",
+    "cultureDesc": "Wir fördern Innovation, Zusammenarbeit und Wachstum in einem dynamischen Umfeld."
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "subtitle": "Melden Sie sich bei Ihrem Konto an",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "signIn": "Anmelden",
+    "noAccount": "Kein Konto?",
+    "register": "Registrieren",
+    "forgotPassword": "Passwort vergessen?"
+  },
+  "footer": {
+    "description": "Führender SaaS-Anbieter mit Sitz in Islamabad & Rawalpindi, Pakistan. Wir bedienen Kunden lokal und international.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "bookNow": "Jetzt buchen",
+    "loading": "Laden..."
+  }
+}

@@ -26,7 +26,7 @@ import {
   XCircle,
   Clock,
   Edit,
-  Trash2,
+  Trash,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "process": "流程",
+    "pricing": "定价",
+    "portfolio": "作品集",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "blog": "博客",
+    "careers": "招聘",
+    "login": "登录",
+    "getStarted": "立即开始"
+  },
+  "hero": {
+    "title": "顶级企业解决方案",
+    "titleHighlight": "覆盖巴基斯坦与全球",
+    "subtitle": "我们从伊斯兰堡和拉瓦尔品第向全球提供创新的网站开发、数字营销和咨询解决方案。",
+    "cta": "立即开始",
+    "ctaSecondary": "查看我们的作品"
+  },
+  "stats": {
+    "projects": "已交付项目",
+    "clients": "满意客户",
+    "countries": "服务国家",
+    "uptime": "正常运行保证"
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "为您的业务增长量身定制的综合解决方案",
+    "webDev": "网站开发",
+    "webDevDesc": "使用尖端技术构建的定制响应式网站和Web应用程序。",
+    "digitalMarketing": "数字营销",
+    "digitalMarketingDesc": "SEO、SEM、社交媒体营销和内容策略，带来实际效果。",
+    "consulting": "咨询",
+    "consultingDesc": "专业的商业和技术咨询，转型您的运营。",
+    "saas": "SaaS解决方案",
+    "saasDesc": "为企业需求设计的可扩展软件即服务产品。",
+    "mobile": "移动应用",
+    "mobileDesc": "适用于iOS和Android的原生和跨平台移动应用程序。",
+    "cloud": "云基础设施",
+    "cloudDesc": "安全、可扩展的云架构和DevOps解决方案。"
+  },
+  "about": {
+    "title": "关于AM Enterprises",
+    "subtitle": "从伊斯兰堡和拉瓦尔品第构建未来",
+    "story": "AM Enterprises成立于伊斯兰堡，已发展成为领先的企业SaaS提供商，为巴基斯坦和国际客户提供服务。",
+    "mission": "我们的使命",
+    "missionText": "从巴基斯坦的心脏地带出发，用尖端技术解决方案赋能全球企业。",
+    "vision": "我们的愿景",
+    "visionText": "成为巴基斯坦、中东及其他地区企业最值得信赖的技术合作伙伴。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "准备好转型您的业务了吗？请联系我们。",
+    "name": "全名",
+    "email": "电子邮件地址",
+    "message": "您的留言",
+    "send": "发送消息",
+    "sending": "发送中...",
+    "success": "消息发送成功！",
+    "location": "我们的办公室",
+    "islamabad": "巴基斯坦伊斯兰堡（总部）",
+    "rawalpindi": "巴基斯坦拉瓦尔品第"
+  },
+  "pricing": {
+    "title": "定价方案",
+    "subtitle": "适合各种规模企业的经济实惠解决方案",
+    "starter": "入门版",
+    "professional": "专业版",
+    "enterprise": "企业版",
+    "popular": "最受欢迎",
+    "perMonth": "/月",
+    "getStarted": "立即开始",
+    "contactSales": "联系销售",
+    "features": "功能"
+  },
+  "portfolio": {
+    "title": "我们的作品集",
+    "subtitle": "在巴基斯坦和国际上成功交付的项目",
+    "viewProject": "查看项目",
+    "allCategories": "全部"
+  },
+  "process": {
+    "title": "我们的流程",
+    "subtitle": "我们如何一步步提供卓越服务",
+    "step1": "发现",
+    "step1Desc": "我们详细分析您的需求、目标和市场格局。",
+    "step2": "策略",
+    "step2Desc": "我们的团队制定带有明确里程碑的定制路线图。",
+    "step3": "设计",
+    "step3Desc": "反映您品牌身份的精美用户中心设计。",
+    "step4": "开发",
+    "step4Desc": "敏捷开发，定期更新和质量保证。",
+    "step5": "发布",
+    "step5Desc": "通过全面测试和优化实现平稳部署。",
+    "step6": "支持",
+    "step6Desc": "持续维护、更新和全天候支持。"
+  },
+  "blog": {
+    "title": "我们的博客",
+    "subtitle": "关于巴基斯坦和全球SaaS、技术和商业的见解",
+    "readMore": "阅读更多",
+    "minRead": "分钟阅读"
+  },
+  "careers": {
+    "title": "加入我们的团队",
+    "subtitle": "在伊斯兰堡、拉瓦尔品第和全球构建未来",
+    "whyJoin": "为什么加入AM Enterprises？",
+    "openPositions": "开放职位",
+    "applyNow": "立即申请",
+    "location": "地点",
+    "remote": "远程",
+    "cultureTitle": "我们的文化",
+    "cultureDesc": "我们在充满活力的环境中促进创新、协作和成长。"
+  },
+  "login": {
+    "title": "欢迎回来",
+    "subtitle": "登录您的账户",
+    "email": "电子邮件",
+    "password": "密码",
+    "signIn": "登录",
+    "noAccount": "没有账户？",
+    "register": "注册",
+    "forgotPassword": "忘记密码？"
+  },
+  "footer": {
+    "description": "总部位于巴基斯坦伊斯兰堡和拉瓦尔品第的领先企业SaaS提供商。为本地和国际客户提供服务。",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "followUs": "关注我们",
+    "rights": "版权所有。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "bookNow": "立即预订",
+    "loading": "加载中..."
+  }
+}

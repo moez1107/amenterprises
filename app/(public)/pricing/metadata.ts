@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Affordable & Transparent Pricing | AM Enterprises",
     description: "Scalable web & app solutions with clear pricing – no hidden fees.",
-    url: "https://yourdomain.com/pricing",
+    url: "https://amenterprises.tech/pricing",
     siteName: "AM Enterprises",
     images: [
       {

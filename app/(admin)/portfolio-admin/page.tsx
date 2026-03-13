@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import { createClient } from "@/lib/supabase/client"
 import { toast } from "sonner"
-import { Plus, Pencil, Trash2, Loader2, ExternalLink } from "lucide-react"
+import { Plus, Pencil, Trash, Loader2, ExternalLink } from "lucide-react"
 
 // ─────────────────────────────────────────────
 // Types (Full fields from portfolio_projects table)
@@ -355,7 +355,7 @@ export default function AdminPortfolioPage() {
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button variant="ghost" size="icon" className="text-destructive">
-                            <Trash2 className="h-4 w-4" />
+                            <Trash className="h-4 w-4" />
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>

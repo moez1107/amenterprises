@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "process": "Süreç",
+    "pricing": "Fiyatlandırma",
+    "portfolio": "Portföy",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "blog": "Blog",
+    "careers": "Kariyer",
+    "login": "Giriş Yap",
+    "getStarted": "Başlayın"
+  },
+  "hero": {
+    "title": "Birinci Sınıf Kurumsal Çözümler",
+    "titleHighlight": "Pakistan ve Dünya Genelinde",
+    "subtitle": "İslamabad ve Ravalpindi'den dünyaya yenilikçi web geliştirme, dijital pazarlama ve danışmanlık çözümleri sunuyoruz.",
+    "cta": "Başlayın",
+    "ctaSecondary": "Çalışmalarımızı Görün"
+  },
+  "stats": {
+    "projects": "Teslim Edilen Proje",
+    "clients": "Mutlu Müşteri",
+    "countries": "Hizmet Verilen Ülke",
+    "uptime": "Çalışma Süresi Garantisi"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "İşletmenizin büyümesi için kapsamlı çözümler",
+    "webDev": "Web Geliştirme",
+    "webDevDesc": "En son teknolojilerle oluşturulmuş özel, duyarlı web siteleri ve web uygulamaları.",
+    "digitalMarketing": "Dijital Pazarlama",
+    "digitalMarketingDesc": "SEO, SEM, sosyal medya pazarlaması ve sonuç odaklı içerik stratejileri.",
+    "consulting": "Danışmanlık",
+    "consultingDesc": "Operasyonlarınızı dönüştürmek için uzman iş ve teknoloji danışmanlığı.",
+    "saas": "SaaS Çözümleri",
+    "saasDesc": "Kurumsal ihtiyaçlar için tasarlanmış ölçeklenebilir hizmet olarak yazılım ürünleri.",
+    "mobile": "Mobil Uygulamalar",
+    "mobileDesc": "iOS ve Android için yerel ve çapraz platform mobil uygulamalar.",
+    "cloud": "Bulut Altyapısı",
+    "cloudDesc": "Güvenli, ölçeklenebilir bulut mimarisi ve DevOps çözümleri."
+  },
+  "about": {
+    "title": "AM Enterprises Hakkında",
+    "subtitle": "İslamabad ve Ravalpindi'den geleceği inşa ediyoruz",
+    "story": "İslamabad'da kurulan AM Enterprises, Pakistan ve uluslararası alanda müşterilere hizmet veren lider bir kurumsal SaaS sağlayıcısına dönüştü.",
+    "mission": "Misyonumuz",
+    "missionText": "Pakistan'ın kalbinden başlayarak dünya çapındaki işletmeleri en son teknoloji çözümlerle güçlendirmek.",
+    "vision": "Vizyonumuz",
+    "visionText": "Pakistan, Orta Doğu ve ötesindeki kuruluşlar için en güvenilir teknoloji ortağı olmak."
+  },
+  "contact": {
+    "title": "Bizimle İletişime Geçin",
+    "subtitle": "İşletmenizi dönüştürmeye hazır mısınız? Bize ulaşın.",
+    "name": "Tam Ad",
+    "email": "E-posta Adresi",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Mesaj başarıyla gönderildi!",
+    "location": "Ofislerimiz",
+    "islamabad": "İslamabad, Pakistan (Merkez)",
+    "rawalpindi": "Ravalpindi, Pakistan"
+  },
+  "pricing": {
+    "title": "Fiyat Planları",
+    "subtitle": "Her büyüklükteki işletme için uygun fiyatlı çözümler",
+    "starter": "Başlangıç",
+    "professional": "Profesyonel",
+    "enterprise": "Kurumsal",
+    "popular": "En Popüler",
+    "perMonth": "/ay",
+    "getStarted": "Başlayın",
+    "contactSales": "Satışla İletişime Geçin",
+    "features": "Özellikler"
+  },
+  "portfolio": {
+    "title": "Portföyümüz",
+    "subtitle": "Pakistan ve uluslararası alanda başarılı projeler",
+    "viewProject": "Projeyi Görüntüle",
+    "allCategories": "Tümü"
+  },
+  "process": {
+    "title": "Sürecimiz",
+    "subtitle": "Adım adım mükemmelliği nasıl sunuyoruz",
+    "step1": "Keşif",
+    "step1Desc": "Gereksinimlerinizi, hedeflerinizi ve pazar manzarasını detaylı olarak analiz ediyoruz.",
+    "step2": "Strateji",
+    "step2Desc": "Ekibimiz net kilometre taşlarıyla özelleştirilmiş bir yol haritası hazırlar.",
+    "step3": "Tasarım",
+    "step3Desc": "Marka kimliğinizi yansıtan güzel, kullanıcı odaklı tasarımlar.",
+    "step4": "Geliştirme",
+    "step4Desc": "Düzenli güncellemeler ve kalite güvencesi ile çevik geliştirme.",
+    "step5": "Lansman",
+    "step5Desc": "Kapsamlı test ve optimizasyon ile sorunsuz dağıtım.",
+    "step6": "Destek",
+    "step6Desc": "Sürekli bakım, güncellemeler ve 7/24 destek."
+  },
+  "blog": {
+    "title": "Blogumuz",
+    "subtitle": "Pakistan ve dünya genelinde SaaS, teknoloji ve iş dünyası hakkında içgörüler",
+    "readMore": "Devamını Oku",
+    "minRead": "dk okuma"
+  },
+  "careers": {
+    "title": "Ekibimize Katılın",
+    "subtitle": "İslamabad, Ravalpindi ve dünya genelinde geleceği inşa edin",
+    "whyJoin": "Neden AM Enterprises'a Katılmalısınız?",
+    "openPositions": "Açık Pozisyonlar",
+    "applyNow": "Şimdi Başvurun",
+    "location": "Konum",
+    "remote": "Uzaktan",
+    "cultureTitle": "Kültürümüz",
+    "cultureDesc": "Dinamik bir ortamda inovasyon, işbirliği ve büyümeyi teşvik ediyoruz."
+  },
+  "login": {
+    "title": "Tekrar Hoş Geldiniz",
+    "subtitle": "Hesabınıza giriş yapın",
+    "email": "E-posta",
+    "password": "Şifre",
+    "signIn": "Giriş Yap",
+    "noAccount": "Hesabınız yok mu?",
+    "register": "Kayıt Ol",
+    "forgotPassword": "Şifrenizi mi unuttunuz?"
+  },
+  "footer": {
+    "description": "İslamabad ve Ravalpindi, Pakistan merkezli lider kurumsal SaaS sağlayıcısı. Yerel ve uluslararası müşterilere hizmet vermekteyiz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "followUs": "Bizi Takip Edin",
+    "rights": "Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  },
+  "common": {
+    "learnMore": "Daha Fazla Bilgi",
+    "bookNow": "Şimdi Rezerve Et",
+    "loading": "Yükleniyor..."
+  }
+}
