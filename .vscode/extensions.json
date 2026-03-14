@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "bradlc.vscode-tailwindcss"
+        "myml.vscode-markdown-plantuml-preview",
+        "esbenp.prettier-vscode",
+        "jebbs.plantuml"
     ]
 }
