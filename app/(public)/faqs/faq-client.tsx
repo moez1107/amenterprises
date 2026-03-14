@@ -44,7 +44,7 @@ export default function FAQClient() {
   const [faqs, setFaqs] = useState<FAQ[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("")
-  const [category, setCategory] = useState("All")
+  const [category, setCategory] = useState<string>("All")
   const [askForm, setAskForm] = useState({ name: "", email: "", question: "" })
   const [submitting, setSubmitting] = useState(false)
 
@@ -80,7 +80,10 @@ export default function FAQClient() {
     loadFAQs()
   }, [category])
 
-  const categories = ["All", ...new Set(faqs.map(f => f.category).filter(Boolean))]
+  const categories = [
+  "All",
+  ...Array.from(new Set(faqs.map(f => f.category).filter((c): c is string => Boolean(c))))
+]
 
   const filteredFAQs = faqs.filter(f =>
     f.question.toLowerCase().includes(search.toLowerCase()) ||

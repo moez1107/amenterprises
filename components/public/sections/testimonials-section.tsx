@@ -35,10 +35,22 @@ const fallbackTestimonials = [
   },
 ]
 
+type Testimonial = {
+  id: string
+  author_name: string
+  author_title: string
+  author_company: string
+  rating: number
+  content: string
+}
+
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const { data: testimonials, isLoading } = useTestimonials(true)
-  
+  const { data: testimonials, isLoading } = useTestimonials(true) as {
+    data: Testimonial[]
+    isLoading: boolean
+  }
+
   const displayTestimonials = testimonials && testimonials.length > 0 ? testimonials : fallbackTestimonials
 
   const nextTestimonial = () => {
@@ -130,11 +142,12 @@ export function TestimonialsSection() {
                 >
                   <ChevronLeft className="size-5" />
                 </Button>
-                
+
                 {/* Dots */}
                 <div className="flex items-center gap-2">
-                  {displayTestimonials.map((_: any, index: number) => (
+                  {displayTestimonials.map((testimonial: Testimonial, index: number) => (
                     <button
+                      aria-label={`Go to testimonial ${index + 1}`}
                       key={index}
                       onClick={() => setCurrentIndex(index)}
                       className={cn(
@@ -146,7 +159,7 @@ export function TestimonialsSection() {
                     />
                   ))}
                 </div>
-                
+
                 <Button
                   variant="outline"
                   size="icon"

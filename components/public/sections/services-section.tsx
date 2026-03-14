@@ -62,6 +62,13 @@ const containerVariants = {
   },
 }
 
+type Service = {
+  id: string
+  title: string
+  description: string
+  icon?: string
+}
+
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -74,7 +81,7 @@ const itemVariants = {
 }
 
 export function ServicesSection() {
-  const { data: services, isLoading } = useServices()
+  const { data: services, isLoading } = useServices() as { data: any[]; isLoading: boolean }
   
   const displayServices = services && services.length > 0 ? services : fallbackServices
 

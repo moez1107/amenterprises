@@ -22,7 +22,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { ParticlesBackground } from "@/components/public/particles-background"
 import Link from "next/link"
-import Navbar from "@/components/public/public-navbar"
+
 
 
 // ─────────────────────────────

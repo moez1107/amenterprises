@@ -51,7 +51,7 @@ export default function ServicesClient({ services }: { services: Service[] }) {
 
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-950 transition-colors duration-500">
-      <ParticlesBackground opacity={0.4} />
+        <ParticlesBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-primary/3 via-transparent to-transparent pointer-events-none" />
 
       <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
