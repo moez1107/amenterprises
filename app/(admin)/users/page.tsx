@@ -37,6 +37,11 @@ export default function UsersPage() {
   useEffect(() => {
     fetchUsers().then((data) => { setUsers(data); setLoading(false) })
   }, [])
+  // 1️⃣ Extend User type with index signature
+  interface UserRecord extends User {
+    [key: string]: unknown
+  }
+
 
   const columns: Column<User>[] = [
     {
@@ -128,15 +133,22 @@ export default function UsersPage() {
 
       <Card className="border-0 shadow-sm">
         <CardContent className="p-6">
-          <DataTable
+
+// 2️⃣ Use DataTable with UserRecord
+          <DataTable<UserRecord>
             columns={columns}
-            data={users as unknown as Record<string, unknown>[]}
+            data={users as UserRecord[]}
             loading={loading}
             searchKey="name"
             searchPlaceholder="Search users..."
             filterOptions={[
               { key: "role", label: "Role", options: roles.map((r) => ({ value: r, label: r })) },
-              { key: "status", label: "Status", options: [{ value: "active", label: "Active" }, { value: "inactive", label: "Inactive" }] },
+              {
+                key: "status", label: "Status", options: [
+                  { value: "active", label: "Active" },
+                  { value: "inactive", label: "Inactive" }
+                ]
+              },
             ]}
           />
         </CardContent>

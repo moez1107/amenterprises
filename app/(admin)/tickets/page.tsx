@@ -117,6 +117,10 @@ export default function TicketsPage() {
   const openCount = tickets.filter((t) => t.status === "open").length
   const inProgressCount = tickets.filter((t) => t.status === "in-progress").length
   const resolvedCount = tickets.filter((t) => t.status === "resolved" || t.status === "closed").length
+  // 1️⃣ Extend Ticket type with index signature
+  interface TicketRecord extends Ticket {
+    [key: string]: unknown
+  }
 
   const handleSendMessage = () => {
     if (!newMessage.trim() || !selectedTicket) return
@@ -210,9 +214,11 @@ export default function TicketsPage() {
 
       <Card className="border-0 shadow-sm">
         <CardContent className="p-6">
-          <DataTable
+
+// 2️⃣ Use DataTable with TicketRecord
+          <DataTable<TicketRecord>
             columns={columns}
-            data={tickets as unknown as Record<string, unknown>[]}
+            data={tickets as TicketRecord[]}
             loading={loading}
             searchKey="title"
             searchPlaceholder="Search tickets..."
@@ -271,16 +277,14 @@ export default function TicketsPage() {
                 {selectedTicket.messages.map((msg, idx) => (
                   <div
                     key={idx}
-                    className={`flex flex-col gap-1 ${
-                      msg.sender === "Support" ? "items-end" : "items-start"
-                    }`}
+                    className={`flex flex-col gap-1 ${msg.sender === "Support" ? "items-end" : "items-start"
+                      }`}
                   >
                     <div
-                      className={`max-w-[80%] rounded-lg p-3 text-sm ${
-                        msg.sender === "Support"
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-foreground"
-                      }`}
+                      className={`max-w-[80%] rounded-lg p-3 text-sm ${msg.sender === "Support"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-foreground"
+                        }`}
                     >
                       {msg.text}
                     </div>

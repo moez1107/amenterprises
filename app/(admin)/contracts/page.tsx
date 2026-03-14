@@ -115,6 +115,9 @@ export default function ContractsPage() {
   const pendingCount = contracts.filter((c) => c.status === "pending").length
   const expiredCount = contracts.filter((c) => c.status === "expired").length
   const totalValue = contracts.filter((c) => c.status === "active").reduce((a, c) => a + c.value, 0)
+interface ContractRecord extends Contract {
+  [key: string]: unknown
+}
 
   return (
     <div className="flex flex-col gap-6">
@@ -247,9 +250,9 @@ export default function ContractsPage() {
 
       <Card className="border-0 shadow-sm">
         <CardContent className="p-6">
-          <DataTable
+          <DataTable<ContractRecord>
             columns={columns}
-            data={contracts as unknown as Record<string, unknown>[]}
+            data={contracts as ContractRecord[]}
             loading={loading}
             searchKey="title"
             searchPlaceholder="Search contracts..."

@@ -18,6 +18,11 @@ import { Plus, Building2, DollarSign, FileText } from "lucide-react"
 import { toast } from "sonner"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 
+// Add index signature to Client type for TS generic compatibility
+interface ClientRecord extends Client {
+  [key: string]: unknown
+}
+
 const paymentHistory = [
   { month: "Sep", amount: 12000 }, { month: "Oct", amount: 18000 },
   { month: "Nov", amount: 15000 }, { month: "Dec", amount: 22000 },
@@ -34,44 +39,57 @@ export default function ClientsPage() {
 
   useEffect(() => {
     Promise.all([
-      fetchClients(company.id), fetchInvoices(company.id), fetchProjects(company.id),
+      fetchClients(company.id),
+      fetchInvoices(company.id),
+      fetchProjects(company.id),
     ]).then(([c, i, p]) => {
-      setClients(c); setInvoices(i); setProjects(p); setLoading(false)
+      setClients(c)
+      setInvoices(i)
+      setProjects(p)
+      setLoading(false)
     })
   }, [company.id])
 
-  const columns: Column<Client>[] = [
+  const columns: Column<ClientRecord>[] = [
     {
-      key: "name", label: "Client", sortable: true,
-      render: (row: Client) => (
-        <button onClick={() => setSelected(row)} className="flex items-center gap-3 hover:underline text-left">
+      key: "name",
+      label: "Client",
+      sortable: true,
+      render: (row) => (
+        <button onClick={() => setSelected(row as Client)} className="flex items-center gap-3 hover:underline text-left">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary/10 text-primary text-xs font-bold">
-            {row.name.charAt(0)}
+            {(row.name as string).charAt(0)}
           </div>
           <div>
-            <p className="font-medium text-foreground">{row.name}</p>
-            <p className="text-xs text-muted-foreground">{row.industry}</p>
+            <p className="font-medium text-foreground">{row.name as string}</p>
+            <p className="text-xs text-muted-foreground">{row.industry as string}</p>
           </div>
         </button>
       ),
     },
     { key: "email", label: "Email", sortable: true },
     {
-      key: "status", label: "Status",
-      render: (row: Client) => <StatusBadge status={row.status} />,
+      key: "status",
+      label: "Status",
+      render: (row) => <StatusBadge status={row.status as string} />,
     },
     {
-      key: "totalRevenue", label: "Revenue", sortable: true,
-      render: (row: Client) => <span className="font-medium text-foreground">{formatCurrency(row.totalRevenue)}</span>,
+      key: "totalRevenue",
+      label: "Revenue",
+      sortable: true,
+      render: (row) => <span className="font-medium text-foreground">{formatCurrency(row.totalRevenue as number)}</span>,
     },
     {
-      key: "joinDate", label: "Joined", sortable: true,
-      render: (row: Client) => <span className="text-muted-foreground">{formatDate(row.joinDate)}</span>,
+      key: "joinDate",
+      label: "Joined",
+      sortable: true,
+      render: (row) => <span className="text-muted-foreground">{formatDate(row.joinDate as string)}</span>,
     },
   ]
 
   return (
     <div className="flex flex-col gap-6">
+      {/* Page Header */}
       <PageHeader
         title="Client Management"
         description="Manage your client relationships and profiles."
@@ -86,7 +104,10 @@ export default function ClientsPage() {
                 <DialogTitle>Add New Client</DialogTitle>
                 <DialogDescription>Add a new client to your account.</DialogDescription>
               </DialogHeader>
-              <form onSubmit={(e) => { e.preventDefault(); toast.success("Client added") }} className="flex flex-col gap-4">
+              <form
+                onSubmit={(e) => { e.preventDefault(); toast.success("Client added") }}
+                className="flex flex-col gap-4"
+              >
                 <div className="flex flex-col gap-2"><Label>Company Name</Label><Input placeholder="Company name" required /></div>
                 <div className="flex flex-col gap-2"><Label>Email</Label><Input type="email" placeholder="contact@company.com" required /></div>
                 <div className="flex flex-col gap-2"><Label>Phone</Label><Input placeholder="+1-555-0000" /></div>
@@ -98,11 +119,12 @@ export default function ClientsPage() {
         }
       />
 
+      {/* Summary Cards */}
       <div className="grid gap-4 sm:grid-cols-3">
         {[
           { label: "Total Clients", value: clients.length, icon: Building2 },
           { label: "Total Revenue", value: formatCurrency(clients.reduce((a, c) => a + c.totalRevenue, 0)), icon: DollarSign },
-          { label: "Active Invoices", value: invoices.filter((i) => i.status === "pending").length, icon: FileText },
+          { label: "Active Invoices", value: invoices.filter(i => i.status === "pending").length, icon: FileText },
         ].map((s) => (
           <Card key={s.label} className="border-0 shadow-sm">
             <CardContent className="flex items-center gap-4 p-6">
@@ -118,6 +140,7 @@ export default function ClientsPage() {
         ))}
       </div>
 
+      {/* Client Details or Table */}
       {selected ? (
         <Card className="border-0 shadow-sm">
           <CardHeader>
@@ -142,12 +165,14 @@ export default function ClientsPage() {
                 <TabsTrigger value="payments">Payment History</TabsTrigger>
                 <TabsTrigger value="notes">Notes</TabsTrigger>
               </TabsList>
+
+              {/* Projects */}
               <TabsContent value="projects" className="mt-4">
-                {projects.filter((p) => p.clientId === selected.id).length === 0 ? (
+                {projects.filter(p => p.clientId === selected.id).length === 0 ? (
                   <p className="py-8 text-center text-muted-foreground">No projects yet for this client.</p>
                 ) : (
                   <div className="flex flex-col gap-3">
-                    {projects.filter((p) => p.clientId === selected.id).map((p) => (
+                    {projects.filter(p => p.clientId === selected.id).map(p => (
                       <div key={p.id} className="flex items-center justify-between rounded-lg border border-border p-4">
                         <div>
                           <p className="font-medium text-foreground">{p.name}</p>
@@ -159,12 +184,14 @@ export default function ClientsPage() {
                   </div>
                 )}
               </TabsContent>
+
+              {/* Invoices */}
               <TabsContent value="invoices" className="mt-4">
-                {invoices.filter((i) => i.clientId === selected.id).length === 0 ? (
+                {invoices.filter(i => i.clientId === selected.id).length === 0 ? (
                   <p className="py-8 text-center text-muted-foreground">No invoices yet.</p>
                 ) : (
                   <div className="flex flex-col gap-3">
-                    {invoices.filter((i) => i.clientId === selected.id).map((inv) => (
+                    {invoices.filter(i => i.clientId === selected.id).map(inv => (
                       <div key={inv.id} className="flex items-center justify-between rounded-lg border border-border p-4">
                         <div>
                           <p className="font-medium text-foreground">{inv.invoiceNumber}</p>
@@ -179,17 +206,21 @@ export default function ClientsPage() {
                   </div>
                 )}
               </TabsContent>
+
+              {/* Payment History */}
               <TabsContent value="payments" className="mt-4">
                 <ResponsiveContainer width="100%" height={250}>
                   <AreaChart data={paymentHistory}>
                     <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
                     <XAxis dataKey="month" tick={{ fill: "var(--color-muted-foreground)", fontSize: 12 }} />
-                    <YAxis tick={{ fill: "var(--color-muted-foreground)", fontSize: 12 }} tickFormatter={(v) => `$${v / 1000}k`} />
+                    <YAxis tick={{ fill: "var(--color-muted-foreground)", fontSize: 12 }} tickFormatter={v => `$${v / 1000}k`} />
                     <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: "8px", color: "var(--color-card-foreground)" }} />
                     <Area type="monotone" dataKey="amount" stroke="var(--color-chart-1)" fill="var(--color-chart-1)" fillOpacity={0.1} />
                   </AreaChart>
                 </ResponsiveContainer>
               </TabsContent>
+
+              {/* Notes */}
               <TabsContent value="notes" className="mt-4">
                 <Textarea placeholder="Add notes about this client..." className="min-h-32" />
                 <Button className="mt-3" onClick={() => toast.success("Notes saved")}>Save Notes</Button>
@@ -200,14 +231,22 @@ export default function ClientsPage() {
       ) : (
         <Card className="border-0 shadow-sm">
           <CardContent className="p-6">
-            <DataTable
+            <DataTable<ClientRecord>
               columns={columns}
-              data={clients as unknown as Record<string, unknown>[]}
+              data={clients as ClientRecord[]}
               loading={loading}
               searchKey="name"
               searchPlaceholder="Search clients..."
               filterOptions={[
-                { key: "status", label: "Status", options: [{ value: "active", label: "Active" }, { value: "inactive", label: "Inactive" }, { value: "overdue", label: "Overdue" }] },
+                {
+                  key: "status",
+                  label: "Status",
+                  options: [
+                    { value: "active", label: "Active" },
+                    { value: "inactive", label: "Inactive" },
+                    { value: "overdue", label: "Overdue" },
+                  ],
+                },
               ]}
               emptyMessage="No clients yet -- add one!"
             />

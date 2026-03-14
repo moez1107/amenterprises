@@ -62,7 +62,10 @@ export default function InvoicesPage() {
   const paidTotal = invoices.filter((i) => i.status === "paid").reduce((a, i) => a + i.total, 0)
   const pendingTotal = invoices.filter((i) => i.status === "pending").reduce((a, i) => a + i.total, 0)
   const overdueTotal = invoices.filter((i) => i.status === "overdue").reduce((a, i) => a + i.total, 0)
-
+// 1️⃣ Create a Record type for Invoice
+interface InvoiceRecord extends Invoice {
+  [key: string]: unknown
+}
   return (
     <div className="flex flex-col gap-6">
       <PageHeader
@@ -132,13 +135,27 @@ export default function InvoicesPage() {
 
       <Card className="border-0 shadow-sm">
         <CardContent className="p-6">
-          <DataTable
+
+
+// 2️⃣ Use InvoiceRecord in DataTable
+          <DataTable<InvoiceRecord>
             columns={columns}
-            data={invoices as unknown as Record<string, unknown>[]}
+            data={invoices as InvoiceRecord[]}
             loading={loading}
             searchKey="invoiceNumber"
             searchPlaceholder="Search invoices..."
-            filterOptions={[{ key: "status", label: "Status", options: [{ value: "paid", label: "Paid" }, { value: "pending", label: "Pending" }, { value: "overdue", label: "Overdue" }, { value: "draft", label: "Draft" }] }]}
+            filterOptions={[
+              {
+                key: "status",
+                label: "Status",
+                options: [
+                  { value: "paid", label: "Paid" },
+                  { value: "pending", label: "Pending" },
+                  { value: "overdue", label: "Overdue" },
+                  { value: "draft", label: "Draft" },
+                ],
+              },
+            ]}
           />
         </CardContent>
       </Card>
