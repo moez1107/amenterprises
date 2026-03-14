@@ -7,49 +7,36 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ParticlesBackground } from "@/components/public/particles-background"
 import { toast } from "sonner"
 import { submitContactForm } from "@/lib/supabase/data"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
-
-// ────────────────────────────────────────────────
-// Zod Schema (Validation)
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email" }),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  service: z.string().optional(),
-  budget: z.string().optional(),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
-  // Honeypot field (spam protection) – bots isse bhar dete hain
-  website: z.string().max(0, { message: "Leave this field empty" }).optional(),
-})
-
-type FormValues = z.infer<typeof formSchema>
 
 const contactInfo = [
-  { icon: Mail, title: "Email Us", value: "contact@amenterprises.tech", href: "mailto:contact@amenterprises.tech" },
-  { icon: Phone, title: "Call Us", value: "+92 317 371 2950", href: "tel:+923173712950" },
-  { icon: MapPin, title: "Visit Us", value: "Islamabad, Pakistan & London, UK", href: "#" },
-  { icon: Clock, title: "Working Hours", value: "Mon - Fri: 9AM - 6PM", href: "#" },
+  {
+    icon: Mail,
+    title: "Email Us",
+    value: "contact@amenterprises.tech",
+    href: "mailto:contact@amenterprises.tech",
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    value: "+92 317 371 2950",
+    href: "tel:+923173712950",
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us",
+    value: "Islamabad, Pakistan & London, UK",
+    href: "#",
+  },
+  {
+    icon: Clock,
+    title: "Working Hours",
+    value: "Mon - Fri: 9AM - 6PM",
+    href: "#",
+  },
 ]
 
 const services = [
@@ -64,50 +51,48 @@ const services = [
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      budget: "",
-      message: "",
-      website: "",
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    budget: "",
+    message: "",
   })
 
-  async function onSubmit(values: FormValues) {
-    // Agar honeypot bhara hua hai → spam samjho
-    if (values.website) {
-      toast.error("Something went wrong. Please try again.")
-      return
-    }
-
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     setIsSubmitting(true)
-
+    
     try {
       const result = await submitContactForm({
-        name: values.name,
-        email: values.email,
-        phone: values.phone || undefined,
-        company_name: values.company || undefined,
-        service: values.service || undefined,
-        budget: values.budget || undefined,
-        message: values.message,
-        source: "contact_page",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        company_name: formData.company || undefined,
+        service: formData.service || undefined,
+        budget: formData.budget || undefined,
+        message: formData.message,
+        source: "contact_page"
       })
-
+      
       if (result.success) {
         toast.success("Message sent successfully! We'll get back to you soon.")
-        form.reset()
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "",
+          budget: "",
+          message: "",
+        })
       } else {
-        toast.error(result.error?.message || "Failed to send message. Please try again.")
+        toast.error("Failed to send message. Please try again.")
       }
-    } catch (err) {
-      toast.error("An unexpected error occurred. Please try again.")
+    } catch {
+      toast.error("An error occurred. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
@@ -119,7 +104,7 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-16 overflow-hidden">
         <ParticlesBackground />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -129,9 +114,10 @@ export default function ContactPage() {
           >
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Contact Us</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-4 mb-6 text-balance">
-              Let's Start a <span className="gradient-text">Conversation</span>
+              Let's Start a{" "}
+              <span className="gradient-text">Conversation</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground text-pretty">
               Have a project in mind? We'd love to hear about it. Get in touch and let's create something amazing together.
             </p>
           </motion.div>
@@ -152,7 +138,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-2xl font-bold mb-4">Get In Touch</h2>
                 <p className="text-muted-foreground">
-                  Reach out through any channel below. We usually respond within 24 hours.
+                  Reach out to us through any of the following channels. We typically respond within 24 hours.
                 </p>
               </div>
 
@@ -174,7 +160,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Social Links */}
+              {/* Social */}
               <div className="pt-8 border-t border-border">
                 <h3 className="font-semibold mb-4">Follow Us</h3>
                 <div className="flex items-center gap-3">
@@ -183,7 +169,6 @@ export default function ContactPage() {
                       key={social}
                       href="#"
                       className="size-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
-                      aria-label={social}
                     >
                       {social.charAt(0)}
                     </a>
@@ -192,162 +177,127 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Contact Form – Modern with React Hook Form + Zod */}
+            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="lg:col-span-2"
             >
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="glass-card rounded-2xl p-8 space-y-6">
-                  <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-
-                  {/* Honeypot – hidden field */}
-                  <FormField
-                    control={form.control}
-                    name="website"
-                    render={({ field }) => (
-                      <input type="text" className="hidden" {...field} tabIndex={-1} autoComplete="off" />
-                    )}
-                  />
-
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Full Name *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="John Doe" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address *</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="john@example.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
-                          <FormControl>
-                            <Input placeholder="+92 300 1234567" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="company"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Company</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your Company" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="service"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Service Interested In</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select a service" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              {services.map((service) => (
-                                <SelectItem key={service} value={service.toLowerCase()}>
-                                  {service}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="budget"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Budget Range</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select budget range" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="<5k">Less than $5,000</SelectItem>
-                              <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                              <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                              <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                              <SelectItem value="50k+">$50,000+</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+              <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8">
+                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder="John Doe"
+                      required
                     />
                   </div>
-
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Project Details *</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us about your project, goals, and timeline..."
-                            rows={6}
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder="john@example.com"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input
+                      id="phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Company</Label>
+                    <Input
+                      id="company"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      placeholder="Your Company"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="service">Service Interested In</Label>
+                    <Select
+                      value={formData.service}
+                      onValueChange={(value) => setFormData({ ...formData, service: value })}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {services.map((service) => (
+                          <SelectItem key={service} value={service.toLowerCase()}>
+                            {service}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="budget">Budget Range</Label>
+                    <Select
+                      value={formData.budget}
+                      onValueChange={(value) => setFormData({ ...formData, budget: value })}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select budget range" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="<5k">Less than $5,000</SelectItem>
+                        <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
+                        <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
+                        <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
+                        <SelectItem value="50k+">$50,000+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                
+                <div className="space-y-2 mt-6">
+                  <Label htmlFor="message">Project Details *</Label>
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Tell us about your project, goals, and timeline..."
+                    rows={6}
+                    required
                   />
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-primary to-accent text-white"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : <>Send Message <Send className="ml-2 h-4 w-4" /></>}
-                  </Button>
-                </form>
-              </Form>
+                </div>
+                
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full mt-6 bg-gradient-to-r from-primary to-accent text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 size-4" />
+                    </>
+                  )}
+                </Button>
+              </form>
             </motion.div>
           </div>
         </div>
